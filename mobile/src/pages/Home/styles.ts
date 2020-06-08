@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export const Container = styled.View`
-    flex: 1;
+export const Container = styled.ScrollView``;
+
+export const Header = styled.View`
     background-color: #f8f8f8;
     padding: 20px;
 `;
@@ -28,4 +29,9 @@ export const Category = styled(LinearGradient)`
     padding: 15px;
     margin-right: 10px;
     border-radius: 50px;
+`;
+
+export const Items = styled.View`
+    padding: 0;
+    background-color: #f8f8f8;
 `;
