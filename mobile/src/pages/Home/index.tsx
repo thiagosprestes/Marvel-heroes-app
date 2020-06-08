@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
     Container,
@@ -18,7 +18,17 @@ import Human from '../../assets/icons/human.svg';
 
 import List from '../../components/List';
 
+import api from '../../services/api';
+
 const Home = () => {
+    const [heroes, setHeroes] = useState([]);
+
+    useEffect(() => {
+        api.get('heroes').then((response) => {
+            setHeroes(response.data);
+        });
+    }, []);
+
     return (
         <Container>
             <Header>
@@ -44,11 +54,11 @@ const Home = () => {
                 </Categories>
             </Header>
             <Items>
-                <List title="Heróis" />
-                <List title="Vilões" />
+                <List title="Heróis" characters={heroes} />
+                {/* <List title="Vilões" />
                 <List title="Anti-heróis" />
                 <List title="Alienigenas" />
-                <List title="Humanos" />
+                <List title="Humanos" /> */}
             </Items>
         </Container>
     );

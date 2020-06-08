@@ -13,9 +13,14 @@ import {
 
 interface Props {
     title: string;
+    characters: {
+        name: string;
+        alterEgo: string;
+        imagePath: string;
+    }[];
 }
 
-const List: React.FC<Props> = ({ title }) => {
+const List: React.FC<Props> = ({ title, characters }) => {
     return (
         <Container>
             <ListHeader>
@@ -27,22 +32,17 @@ const List: React.FC<Props> = ({ title }) => {
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{ paddingHorizontal: 20 }}
             >
-                <Item source={require('../../assets/spider-man.png')}>
-                    <ItemSubtitle>Peter Parker</ItemSubtitle>
-                    <ItemTitle>Homem Aranha</ItemTitle>
-                </Item>
-                <Item source={require('../../assets/spider-man.png')}>
-                    <ItemSubtitle>Peter Parker</ItemSubtitle>
-                    <ItemTitle>Homem Aranha</ItemTitle>
-                </Item>
-                <Item source={require('../../assets/spider-man.png')}>
-                    <ItemSubtitle>Peter Parker</ItemSubtitle>
-                    <ItemTitle>Homem Aranha</ItemTitle>
-                </Item>
-                <Item source={require('../../assets/spider-man.png')}>
-                    <ItemSubtitle>Peter Parker</ItemSubtitle>
-                    <ItemTitle>Homem Aranha</ItemTitle>
-                </Item>
+                {characters.map((character) => (
+                    <Item
+                        key={character.name}
+                        source={{
+                            uri: `http://10.0.0.57:3333/${character.imagePath}`,
+                        }}
+                    >
+                        <ItemSubtitle>{character.alterEgo}</ItemSubtitle>
+                        <ItemTitle>{character.name}</ItemTitle>
+                    </Item>
+                ))}
             </ListItem>
         </Container>
     );
