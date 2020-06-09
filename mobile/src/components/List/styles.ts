@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export const Container = styled.View`
     margin: 15px 0;
@@ -26,12 +27,23 @@ export const More = styled.Text`
 
 export const ListItem = styled.ScrollView``;
 
-export const Item = styled.ImageBackground`
+export const Item = styled.TouchableOpacity`
+    border-radius: 16px;
+    margin-right: 16px;
+    overflow: hidden;
+`;
+
+export const ItemBackground = styled.ImageBackground`
     width: 140px;
     height: 230px;
-    border-radius: 16px;
-    overflow: hidden;
-    margin-right: 16px;
+`;
+
+export const Gradient = styled(LinearGradient)`
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
 `;
 
 export const ItemSubtitle = styled.Text`

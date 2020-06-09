@@ -22,10 +22,38 @@ import api from '../../services/api';
 
 const Home = () => {
     const [heroes, setHeroes] = useState([]);
+    const [villains, setVillains] = useState([]);
+    const [antiHeroes, setAntiheroes] = useState([]);
+    const [aliens, setAliens] = useState([]);
+    const [humans, setHumans] = useState([]);
 
     useEffect(() => {
         api.get('heroes').then((response) => {
             setHeroes(response.data);
+        });
+    }, []);
+
+    useEffect(() => {
+        api.get('villains').then((response) => {
+            setVillains(response.data);
+        });
+    }, []);
+
+    useEffect(() => {
+        api.get('antiHeroes').then((response) => {
+            setAntiheroes(response.data);
+        });
+    }, []);
+
+    useEffect(() => {
+        api.get('aliens').then((response) => {
+            setAliens(response.data);
+        });
+    }, []);
+
+    useEffect(() => {
+        api.get('humans').then((response) => {
+            setHumans(response.data);
         });
     }, []);
 
@@ -55,10 +83,10 @@ const Home = () => {
             </Header>
             <Items>
                 <List title="Heróis" characters={heroes} />
-                {/* <List title="Vilões" />
-                <List title="Anti-heróis" />
-                <List title="Alienigenas" />
-                <List title="Humanos" /> */}
+                <List title="Vilões" characters={villains} />
+                <List title="Anti-heróis" characters={antiHeroes} />
+                <List title="Alienigenas" characters={aliens} />
+                <List title="Humanos" characters={humans} />
             </Items>
         </Container>
     );
