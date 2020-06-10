@@ -46,20 +46,21 @@ export const Gradient = styled(LinearGradient)`
     height: 100%;
 `;
 
+export const ItemInfo = styled.View`
+    bottom: 0;
+    position: absolute;
+`;
+
 export const ItemSubtitle = styled.Text`
     font-family: 'gilroy-medium';
     font-size: 10px;
     color: #fff;
-    position: absolute;
-    bottom: 45px;
-    padding: 10px;
+    padding: 0 10px;
 `;
 
 export const ItemTitle = styled.Text`
     font-family: 'gilroy-heavy';
     font-size: 20px;
     color: #fff;
-    position: absolute;
-    bottom: 0;
-    padding: 10px;
+    padding: 0 10px 10px;
 `;

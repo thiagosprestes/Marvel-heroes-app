@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { StatusBar } from 'react-native';
-
 import { RouteProp } from '@react-navigation/native';
+
+import { SharedElement } from 'react-navigation-shared-element';
 
 import {
     Container,
@@ -75,12 +75,14 @@ const Character: React.FC<Props> = ({ route }) => {
 
     return (
         <Container>
-            <StatusBar barStyle="light-content" translucent />
-            <CharacterImage
-                source={{
-                    uri: `http://10.0.0.57:3333/${character.imagePath}`,
-                }}
-            />
+            <SharedElement id={`item.${character.name}.photo`}>
+                <CharacterImage
+                    resizeMode="cover"
+                    source={{
+                        uri: `http://10.0.0.57:3333/${character.imagePath}`,
+                    }}
+                />
+            </SharedElement>
             <Gradient colors={['transparent', '#000']} />
             <CharacterData>
                 <Gradient colors={['transparent', '#000']} />

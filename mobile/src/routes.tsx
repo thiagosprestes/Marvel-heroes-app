@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 
 import Menu from './assets/icons/menu.svg';
 import Search from './assets/icons/search.svg';
@@ -9,7 +9,7 @@ import Search from './assets/icons/search.svg';
 import Home from './pages/Home';
 import Character from './pages/Character';
 
-const AppStack = createStackNavigator();
+const AppStack = createSharedElementStackNavigator();
 
 const Routes = () => {
     return (
@@ -46,6 +46,17 @@ const Routes = () => {
                         headerTitleStyle: {
                             display: 'none',
                         },
+                    }}
+                    sharedElementsConfig={(route, otherRoute, showing) => {
+                        const { character } = route.params;
+                        return [
+                            {
+                                id: `item.${character.name}.photo`,
+                                animation: 'move',
+                                resize: 'cover',
+                                align: 'center-top',
+                            },
+                        ];
                     }}
                 />
             </AppStack.Navigator>

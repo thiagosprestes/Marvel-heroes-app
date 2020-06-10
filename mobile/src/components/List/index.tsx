@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 
+import { SharedElement } from 'react-navigation-shared-element';
+
 import {
     Container,
     ListHeader,
@@ -9,6 +11,7 @@ import {
     More,
     ListItem,
     Item,
+    ItemInfo,
     ItemBackground,
     Gradient,
     ItemSubtitle,
@@ -46,18 +49,22 @@ const List: React.FC<Props> = ({ title, characters }) => {
                         }
                         activeOpacity={0.8}
                     >
-                        <ItemBackground
-                            source={{
-                                uri: `http://10.0.0.57:3333/${character.imagePath}`,
-                            }}
-                        >
-                            <Gradient
-                                start={[0.1, 0.4]}
-                                colors={['rgba(0, 0, 0, 0)', '#000']}
+                        <SharedElement id={`item.${character.name}.photo`}>
+                            <ItemBackground
+                                resizeMode="cover"
+                                source={{
+                                    uri: `http://10.0.0.57:3333/${character.imagePath}`,
+                                }}
                             />
+                        </SharedElement>
+                        <Gradient
+                            start={[0.1, 0.4]}
+                            colors={['rgba(0, 0, 0, 0)', '#000']}
+                        />
+                        <ItemInfo>
                             <ItemSubtitle>{character.alterEgo}</ItemSubtitle>
                             <ItemTitle>{character.name}</ItemTitle>
-                        </ItemBackground>
+                        </ItemInfo>
                     </Item>
                 ))}
             </ListItem>
