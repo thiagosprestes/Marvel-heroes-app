@@ -35,7 +35,7 @@ export const Name = styled.Text`
     font-size: 40px;
     color: #fff;
     padding: 0 20px 35px;
-    width: 50%;
+    width: auto;
 `;
 
 export const Caracteristics = styled.View`
@@ -80,7 +80,13 @@ export const Abilities = styled.View`
     padding: 0 20px;
 `;
 
-export const Ability = styled.Text`
+export const Ability = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const AbilityName = styled.Text`
     color: #fff;
     font-family: 'gilroy-regular';
     font-size: 12px;

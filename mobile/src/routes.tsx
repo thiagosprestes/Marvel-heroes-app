@@ -47,7 +47,7 @@ const Routes = () => {
                             display: 'none',
                         },
                     }}
-                    sharedElementsConfig={(route, otherRoute, showing) => {
+                    sharedElementsConfig={(route) => {
                         const { character } = route.params;
                         return [
                             {
@@ -55,6 +55,18 @@ const Routes = () => {
                                 animation: 'move',
                                 resize: 'cover',
                                 align: 'center-top',
+                            },
+                            {
+                                id: `item.${character.name}.alterEgo`,
+                                animation: 'fade',
+                                resize: 'clip',
+                                align: 'left-center',
+                            },
+                            {
+                                id: `item.${character.name}.name`,
+                                animation: 'fade',
+                                resize: 'clip',
+                                align: 'left-center',
                             },
                         ];
                     }}

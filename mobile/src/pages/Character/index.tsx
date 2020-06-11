@@ -18,6 +18,7 @@ import {
     Title,
     Abilities,
     Ability,
+    AbilityName,
     Movies,
     Movie,
 } from './styles';
@@ -26,6 +27,8 @@ import Age from '../../assets/icons/age.svg';
 import Weight from '../../assets/icons/weight.svg';
 import Height from '../../assets/icons/height.svg';
 import Universe from '../../assets/icons/universe.svg';
+
+import AbilitiesLevel from '../../components/AbilitiesLevel';
 
 type RootProps = {
     Params: {
@@ -51,9 +54,9 @@ type RootProps = {
                 intelligence: number;
                 agility: number;
                 endurance: number;
-                velocity: string;
+                velocity: number;
             };
-            movies: Array<[]>;
+            movies: string[];
         };
     };
 };
@@ -83,11 +86,17 @@ const Character: React.FC<Props> = ({ route }) => {
                     }}
                 />
             </SharedElement>
-            <Gradient colors={['transparent', '#000']} />
+            <Gradient
+                start={[0.1, 0.4]}
+                colors={['rgba(0, 0, 0, 0)', '#000']}
+            />
             <CharacterData>
-                <Gradient colors={['transparent', '#000']} />
-                <AlterEgo>{character.alterEgo}</AlterEgo>
-                <Name>{character.name}</Name>
+                <SharedElement id={`item.${character.name}.alterEgo`}>
+                    <AlterEgo>{character.alterEgo}</AlterEgo>
+                </SharedElement>
+                <SharedElement id={`item.${character.name}.name`}>
+                    <Name>{character.name}</Name>
+                </SharedElement>
                 <Caracteristics>
                     <Caracteristic>
                         <Age />
@@ -119,11 +128,28 @@ const Character: React.FC<Props> = ({ route }) => {
                 <CharacterBio>{character.biography}</CharacterBio>
                 <Title>Habilidades</Title>
                 <Abilities>
-                    <Ability>Força</Ability>
-                    <Ability>Inteligência</Ability>
-                    <Ability>Agilidade</Ability>
-                    <Ability>Resistência</Ability>
-                    <Ability>Velocidade</Ability>
+                    <Ability>
+                        <AbilityName>Força</AbilityName>
+                        <AbilitiesLevel level={character.abilities.force} />
+                    </Ability>
+                    <Ability>
+                        <AbilityName>Inteligência</AbilityName>
+                        <AbilitiesLevel
+                            level={character.abilities.intelligence}
+                        />
+                    </Ability>
+                    <Ability>
+                        <AbilityName>Agilidade</AbilityName>
+                        <AbilitiesLevel level={character.abilities.agility} />
+                    </Ability>
+                    <Ability>
+                        <AbilityName>Resistência</AbilityName>
+                        <AbilitiesLevel level={character.abilities.endurance} />
+                    </Ability>
+                    <Ability>
+                        <AbilityName>Velocidade</AbilityName>
+                        <AbilitiesLevel level={character.abilities.velocity} />
+                    </Ability>
                 </Abilities>
                 <Title>Filmes</Title>
                 <Movies

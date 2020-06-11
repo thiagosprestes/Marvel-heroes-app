@@ -62,8 +62,16 @@ const List: React.FC<Props> = ({ title, characters }) => {
                             colors={['rgba(0, 0, 0, 0)', '#000']}
                         />
                         <ItemInfo>
-                            <ItemSubtitle>{character.alterEgo}</ItemSubtitle>
-                            <ItemTitle>{character.name}</ItemTitle>
+                            <SharedElement
+                                id={`item.${character.name}.alterEgo`}
+                            >
+                                <ItemSubtitle>
+                                    {character.alterEgo}
+                                </ItemSubtitle>
+                            </SharedElement>
+                            <SharedElement id={`item.${character.name}.name`}>
+                                <ItemTitle>{character.name}</ItemTitle>
+                            </SharedElement>
                         </ItemInfo>
                     </Item>
                 ))}

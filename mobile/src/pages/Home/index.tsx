@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { StatusBar } from 'react-native';
+
 import {
     Container,
     Header,
@@ -20,12 +22,39 @@ import List from '../../components/List';
 
 import api from '../../services/api';
 
+interface Character {
+    imagePath: string;
+    alterEgo: string;
+    name: string;
+    biography: string;
+    caracteristics: {
+        birth: number;
+        weight: {
+            value: number;
+            unity: string;
+        };
+        height: {
+            value: number;
+            unity: string;
+        };
+        universe: string;
+    };
+    abilities: {
+        force: number;
+        intelligence: number;
+        agility: number;
+        endurance: number;
+        velocity: string;
+    };
+    movies: string[];
+}
+
 const Home = () => {
-    const [heroes, setHeroes] = useState([]);
-    const [villains, setVillains] = useState([]);
-    const [antiHeroes, setAntiheroes] = useState([]);
-    const [aliens, setAliens] = useState([]);
-    const [humans, setHumans] = useState([]);
+    const [heroes, setHeroes] = useState<Character[]>([]);
+    const [villains, setVillains] = useState<Character[]>([]);
+    const [antiHeroes, setAntiheroes] = useState<Character[]>([]);
+    const [aliens, setAliens] = useState<Character[]>([]);
+    const [humans, setHumans] = useState<Character[]>([]);
 
     useEffect(() => {
         api.get('heroes').then((response) => {
@@ -59,6 +88,7 @@ const Home = () => {
 
     return (
         <Container>
+            <StatusBar barStyle="light-content" translucent />
             <Header>
                 <SubTitle>Bem vindo ao Marvel Heroes</SubTitle>
                 <Title>Escolha o seu</Title>
