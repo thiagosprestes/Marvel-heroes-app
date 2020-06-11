@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { SERVER_ADDRESS } from 'react-native-dotenv';
+
 import { RouteProp } from '@react-navigation/native';
 
 import { SharedElement } from 'react-navigation-shared-element';
@@ -82,7 +84,7 @@ const Character: React.FC<Props> = ({ route }) => {
                 <CharacterImage
                     resizeMode="cover"
                     source={{
-                        uri: `http://10.0.0.57:3333/${character.imagePath}`,
+                        uri: `http://${SERVER_ADDRESS}/${character.imagePath}`,
                     }}
                 />
             </SharedElement>
@@ -160,7 +162,7 @@ const Character: React.FC<Props> = ({ route }) => {
                         <Movie
                             key={String(movie)}
                             source={{
-                                uri: `http://10.0.0.57:3333/${movie}`,
+                                uri: `http://${SERVER_ADDRESS}/${movie}`,
                             }}
                         />
                     ))}

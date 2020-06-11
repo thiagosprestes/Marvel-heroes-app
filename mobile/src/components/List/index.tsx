@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { SERVER_ADDRESS } from 'react-native-dotenv';
+
 import { useNavigation } from '@react-navigation/native';
 
 import { SharedElement } from 'react-navigation-shared-element';
@@ -53,7 +55,7 @@ const List: React.FC<Props> = ({ title, characters }) => {
                             <ItemBackground
                                 resizeMode="cover"
                                 source={{
-                                    uri: `http://10.0.0.57:3333/${character.imagePath}`,
+                                    uri: `http://${SERVER_ADDRESS}/${character.imagePath}`,
                                 }}
                             />
                         </SharedElement>
