@@ -89,8 +89,8 @@
 			},
 			"movies": [
 				"movies/iron-man-1.jpg",
-				"movies/iron-man-2.jpg",
 				"movies/hulk.jpg",
+				"movies/iron-man-2.jpg",
 				"movies/avengers-1.jpg",
 				"movies/iron-man-3.jpg",
 				"movies/avengers-2.jpg",
@@ -303,6 +303,7 @@
 			},
 			"movies": [
 				"movies/guardians-of-the-galaxy-1.jpg",
+				"movies/avengers-2.jpg",
 				"movies/avengers-3.jpg",
 				"movies/avengers-4.jpg"
 			]
@@ -332,8 +333,8 @@
 				"velocity": 75
 			},
 			"movies": [
-				"movies/captain-marvel.jpg",
-				"movies/guardians-of-the-galaxy-1.jpg"
+				"movies/guardians-of-the-galaxy-1.jpg",
+				"movies/captain-marvel.jpg"
 			]
 		},
 		{
@@ -361,7 +362,8 @@
 				"velocity": 80
 			},
 			"movies": [
-				"movies/captain-marvel.jpg"
+				"movies/captain-marvel.jpg",
+				"movies/spider-man-far-from-home.jpg"
 			]
 		}
 	],
@@ -391,12 +393,13 @@
 				"velocity": 30
 			},
 			"movies": [
-				"movies/captain-america-1.jpg",
 				"movies/iron-man-1.jpg",
+				"movies/captain-america-1.jpg",
 				"movies/iron-man-2.jpg",
 				"movies/captain-america-2.jpg",
 				"movies/ant-man.jpg",
-				"movies/captain-america-3.jpg"
+				"movies/captain-america-3.jpg",
+				"movies/avengers-4.jpg"
 			]
 		},
 		{
@@ -458,7 +461,6 @@
 				"movies/iron-man-2.jpg",
 				"movies/iron-man-3.jpg",
 				"movies/spider-man-homecoming.jpg",
-				"movies/avengers-3.jpg",
 				"movies/avengers-4.jpg",
 				"movies/spider-man-far-from-home.jpg"
 			]

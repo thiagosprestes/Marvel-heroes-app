@@ -53,10 +53,8 @@ const List: React.FC<Props> = ({ title, characters }) => {
                     >
                         <SharedElement id={`item.${character.name}.photo`}>
                             <ItemBackground
-                                resizeMode="cover"
-                                source={{
-                                    uri: `http://${SERVER_ADDRESS}/${character.imagePath}`,
-                                }}
+                                style={{ resizeMode: 'cover' }}
+                                uri={`http://${SERVER_ADDRESS}/${character.imagePath}`}
                             />
                         </SharedElement>
                         <Gradient

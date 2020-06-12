@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Image } from 'react-native-expo-image-cache';
 
 export const Container = styled.View`
     margin: 15px 0;
@@ -33,7 +34,7 @@ export const Item = styled.TouchableOpacity`
     overflow: hidden;
 `;
 
-export const ItemBackground = styled.ImageBackground`
+export const ItemBackground = styled(Image)`
     width: 140px;
     height: 230px;
 `;

@@ -1,12 +1,13 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Image } from 'react-native-expo-image-cache';
 
 export const Container = styled.ScrollView`
     background-color: #000;
     flex: 1;
 `;
 
-export const CharacterImage = styled.ImageBackground`
+export const CharacterImage = styled(Image)`
     height: 820px;
 `;
 
@@ -97,7 +98,7 @@ export const Movies = styled.ScrollView`
     padding-bottom: 40px;
 `;
 
-export const Movie = styled.Image`
+export const Movie = styled(Image)`
     width: 140px;
     height: 230px;
     border-radius: 16px;

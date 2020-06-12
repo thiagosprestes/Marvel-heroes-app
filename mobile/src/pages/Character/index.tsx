@@ -82,10 +82,8 @@ const Character: React.FC<Props> = ({ route }) => {
         <Container>
             <SharedElement id={`item.${character.name}.photo`}>
                 <CharacterImage
-                    resizeMode="cover"
-                    source={{
-                        uri: `http://${SERVER_ADDRESS}/${character.imagePath}`,
-                    }}
+                    style={{ resizeMode: 'cover' }}
+                    uri={`http://${SERVER_ADDRESS}/${character.imagePath}`}
                 />
             </SharedElement>
             <Gradient
@@ -161,9 +159,7 @@ const Character: React.FC<Props> = ({ route }) => {
                     {character.movies.map((movie) => (
                         <Movie
                             key={String(movie)}
-                            source={{
-                                uri: `http://${SERVER_ADDRESS}/${movie}`,
-                            }}
+                            uri={`http://${SERVER_ADDRESS}/${movie}`}
                         />
                     ))}
                 </Movies>
