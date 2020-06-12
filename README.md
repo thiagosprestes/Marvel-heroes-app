@@ -14,11 +14,11 @@ Marvel Heroes App
 
 <hr />
 
-## Sobre o projeto
+## 📃 Sobre o projeto
 
 Aplicativo proposto como desafio pela <a href="https://umpontoseis.com/" target="_blank">umpontoseis</a> no site de desafios <a href="https://devchallenge.now.sh" target="_blank">DevChallenge</a> onde objetivo é desenvolver um app uque liste alguns personagens da Marvel e suas caracteristicas, tudo isso seguindo o design proposto proposto e utilizando os dados fornecidos.
 
-## Desenvolvido utilizando
+##  Desenvolvido utilizando
 
 - ⚛️ **React native** — Aplicativo mobile
 - ⚛️ **Expo** — Ferramenta de desenvolvimento
