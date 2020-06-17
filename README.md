@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="logo.png" width="auto" height="40" alt="marvel-heroes-app">
+  <img src="logo.png" width="auto" height="70" alt="marvel-heroes-app">
 <br>
 <br>
 Marvel Heroes App
