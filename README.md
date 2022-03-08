@@ -84,7 +84,7 @@ Caso já tenha clonado o repositório basta pular a primeira etapa
 ```bash
 
 # Clona o repositório
-git clone https://github.com/thiagosprestes/vuttr-bossabox.git
+git clone https://github.com/thiagosprestes/Marvel-heroes-app.git
 
 ```
 
