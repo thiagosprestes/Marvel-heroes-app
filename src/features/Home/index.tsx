@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {Category, CategoryType, CharacterList, Home} from './ui';
+import {CategoryType, Home} from './ui';
 import {
   getAliens,
   getAntiHeroes,
@@ -8,17 +8,18 @@ import {
   getHumans,
   getVillains,
 } from './services';
-import {RoutesParams} from '../../routes/routes';
+import {RoutesName, RoutesParams} from '../../routes/routes';
 import Hero from './assets/hero.svg';
 import Villain from './assets/villain.svg';
 import Antihero from './assets/antihero.svg';
 import Alien from './assets/alien.svg';
 import Human from './assets/human.svg';
 import {Alert} from 'react-native';
+import {Category} from '../../models/Category';
+import {CharacterList} from '../../models/CharacterList';
+import {Character} from '../../models/Character';
 
-interface HomeProps {
-  navigation: NativeStackScreenProps<RoutesParams, 'App.Home'>;
-}
+type HomeProps = NativeStackScreenProps<RoutesParams, 'App.Home'>;
 
 const HomeScreen = ({navigation}: HomeProps) => {
   const [characters, setCharacters] = useState<CharacterList>(
@@ -59,6 +60,12 @@ const HomeScreen = ({navigation}: HomeProps) => {
     }
   };
 
+  const handleOnSelectCharacter = (character: Character) => {
+    navigation.navigate(RoutesName.Character, {
+      character,
+    });
+  };
+
   useEffect(() => {
     getCharacters();
   }, []);
@@ -71,6 +78,7 @@ const HomeScreen = ({navigation}: HomeProps) => {
       aliens={characters[CategoryType.alien]}
       humans={characters[CategoryType.human]}
       categories={categories}
+      onSelectCharacter={handleOnSelectCharacter}
     />
   );
 };

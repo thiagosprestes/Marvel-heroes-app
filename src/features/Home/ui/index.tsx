@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {SafeAreaView, ScrollView, View} from 'react-native';
 import styles from './styles';
 import Sidebar from '../assets/sidebar.svg';
@@ -9,18 +9,8 @@ import {Text, TextSize} from '../../../components/Text';
 import LinearGradient from 'react-native-linear-gradient';
 import {colors} from '../../../utils/styleguide/colors';
 import {CharactersList} from '../components/CharactersList';
-
-enum CategoryType {
-  hero = 'hero',
-  villain = 'villain',
-  antihero = 'antihero',
-  alien = 'alien',
-  human = 'human',
-}
-interface Category {
-  name: CategoryType;
-  icon: ReactElement;
-}
+import {Category} from '../../../models/Category';
+import {CategoryType} from '../../../models/CategoryType';
 
 interface HomeProps {
   heroes: Character[];
@@ -29,6 +19,7 @@ interface HomeProps {
   aliens: Character[];
   humans: Character[];
   categories: Category[];
+  onSelectCharacter(character: Character): void;
 }
 
 interface CategoryGradient {
@@ -38,14 +29,6 @@ interface CategoryGradient {
   };
 }
 
-interface CharacterList {
-  [CategoryType.hero]: Character[];
-  [CategoryType.villain]: Character[];
-  [CategoryType.antihero]: Character[];
-  [CategoryType.alien]: Character[];
-  [CategoryType.human]: Character[];
-}
-
 const Home = ({
   heroes,
   villains,
@@ -53,6 +36,7 @@ const Home = ({
   aliens,
   humans,
   categories,
+  onSelectCharacter,
 }: HomeProps) => {
   const categoryGradient: CategoryGradient = {
     [CategoryType.hero]: {
@@ -104,11 +88,31 @@ const Home = ({
               ))}
             </View>
           </View>
-          <CharactersList title="Heróis" characters={heroes} />
-          <CharactersList title="Vilões" characters={villains} />
-          <CharactersList title="Anti-heróis" characters={antiheroes} />
-          <CharactersList title="Alienigenas" characters={aliens} />
-          <CharactersList title="Humanos" characters={humans} />
+          <CharactersList
+            title="Heróis"
+            characters={heroes}
+            onSelectCharacter={onSelectCharacter}
+          />
+          <CharactersList
+            title="Vilões"
+            characters={villains}
+            onSelectCharacter={onSelectCharacter}
+          />
+          <CharactersList
+            title="Anti-heróis"
+            characters={antiheroes}
+            onSelectCharacter={onSelectCharacter}
+          />
+          <CharactersList
+            title="Alienigenas"
+            characters={aliens}
+            onSelectCharacter={onSelectCharacter}
+          />
+          <CharactersList
+            title="Humanos"
+            characters={humans}
+            onSelectCharacter={onSelectCharacter}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -116,4 +120,3 @@ const Home = ({
 };
 
 export {Home, CategoryType};
-export type {Category, CharacterList};

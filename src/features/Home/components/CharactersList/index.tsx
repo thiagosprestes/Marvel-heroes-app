@@ -8,11 +8,16 @@ import LinearGradient from 'react-native-linear-gradient';
 interface CharactersListProps {
   title: string;
   characters: Character[];
+  onSelectCharacter(character: Character): void;
 }
 
-const CharactersList = ({title, characters}: CharactersListProps) => {
+const CharactersList = ({
+  title,
+  characters,
+  onSelectCharacter,
+}: CharactersListProps) => {
   const renderItem = ({item}: {item: Character}) => (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => onSelectCharacter(item)}>
       <ImageBackground
         source={{
           uri: `http://192.168.0.103:3333/${item.imagePath}`,
