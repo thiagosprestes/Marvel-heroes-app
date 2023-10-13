@@ -4,6 +4,7 @@ import styles from './styles';
 import {Text, TextSize} from '../../../../components/Text';
 import {Character} from '../../../../models/Character';
 import LinearGradient from 'react-native-linear-gradient';
+import {API_HOST} from '@env';
 
 interface CharactersListProps {
   title: string;
@@ -19,9 +20,7 @@ const CharactersList = ({
   const renderItem = ({item}: {item: Character}) => (
     <TouchableOpacity onPress={() => onSelectCharacter(item)}>
       <ImageBackground
-        source={{
-          uri: `http://192.168.0.103:3333/${item.imagePath}`,
-        }}
+        source={{uri: `${API_HOST}${item.imagePath}`}}
         style={styles.characterImage}
         imageStyle={styles.characterImageBackground}
         resizeMethod="resize">
