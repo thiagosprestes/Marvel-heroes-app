@@ -33,11 +33,7 @@ Aplicativo proposto como desafio pela <a href="https://umpontoseis.com/" target=
 ## 🛠 Tecnologias utilizadas
 
 - ⚛️ **React native** — Aplicativo mobile
-- ⚛️ **Expo** — Ferramenta de desenvolvimento
-- 📱 **Expo linear gradient** — Efeito de gradient nas imagens
-- 🖼 **React native expo image cache** — Cache das imagens
-- 🎨 **React native shared element** — Efeito de transição entre as rotas
-- 💅 **Styled components** — Estilização dos componentes
+- 📱 **React native linear gradient** — Efeito de gradient nas imagens
 
 ## 🚀 Rodando o projeto
 
@@ -47,7 +43,7 @@ A aplicação é dividida em duas partes, mobile e server, o aplicativo mobile p
 
 - Git
 - NodeJS
-- Expo
+- Setup React Native CLI
 
 ### 💻 Rodando o server
 
@@ -99,15 +95,16 @@ cd mobile
 npm install
 
 ```
-Após concluir a instalação das dependências, dentro da pasta mobile renomeie o arquivo chamado ```.env-example``` para ```.env```, após isso abra o arquivo e troque o endereço ```0.0.0.0``` pelo endereço de IP do seu computador, o mesmo utilizado para executar o server.
+Após concluir a instalação das dependências, dentro da pasta mobile renomeie o arquivo chamado ```.env-example``` para ```.env```, após isso abra o arquivo e troque o endereço ```http://0.0.0.0./3333/``` pelo endereço de IP do seu computador, o mesmo utilizado para executar o server.
 
 Após isso, no terminal da pasta mobile execute o comando abaixo
 
 ```bash
 
-# Inicia o aplicativo
-expo start
+# Inicia o aplicativo no Android
+yarn android
+
+# Inicia o aplicativo no iOS
+yarn ios
 
 ```
-
-Com seu smartphone escaneie o QR code que aparece no terminal utilizando o Expo, app que está disponivel na App store e na Play store para iniciar o aplicativo.
