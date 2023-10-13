@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'Gilroy-bold',
   },
+  medium: {
+    fontSize: 16,
+    fontFamily: 'Gilroy-Medium',
+  },
   normal: {
     fontSize: 14,
     fontFamily: 'Gilroy-Medium',

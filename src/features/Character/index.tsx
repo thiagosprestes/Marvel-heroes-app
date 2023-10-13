@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Character} from './ui';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RoutesParams} from '../../routes/routes';
@@ -6,11 +6,11 @@ import {RoutesParams} from '../../routes/routes';
 type CharacterProps = NativeStackScreenProps<RoutesParams, 'App.Character'>;
 
 const CharacterScreen = ({navigation, route}: CharacterProps) => {
-  const {imagePath} = route.params.character;
+  const {character} = route.params;
 
   const handleOnBack = () => navigation.goBack();
 
-  return <Character background={imagePath} onBack={handleOnBack} />;
+  return <Character onBack={handleOnBack} character={character} />;
 };
 
 export {CharacterScreen};

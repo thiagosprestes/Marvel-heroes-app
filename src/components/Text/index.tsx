@@ -7,6 +7,7 @@ enum TextSize {
   mediumTitle = 'mediumTitle',
   smallTitle = 'smallTitle',
   large = 'large',
+  medium = 'medium',
   normal = 'normal',
   small = 'small',
 }
