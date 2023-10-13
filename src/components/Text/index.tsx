@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, {ReactNode} from 'react';
 import {Text as RNText, TextProps} from 'react-native';
 import styles from './styles';
 
@@ -6,7 +6,9 @@ enum TextSize {
   largeTitle = 'largeTitle',
   mediumTitle = 'mediumTitle',
   smallTitle = 'smallTitle',
+  large = 'large',
   normal = 'normal',
+  small = 'small',
 }
 
 interface TextComponentProps extends TextProps {
@@ -14,9 +16,11 @@ interface TextComponentProps extends TextProps {
   size?: TextSize;
 }
 
-const Text = ({children, size, ...otherProps}: TextComponentProps) => {
+const Text = ({children, style, size, ...otherProps}: TextComponentProps) => {
   return (
-    <RNText style={size ? styles[size] : styles.normal} {...otherProps}>
+    <RNText
+      style={[size ? styles[size] : styles.normal, style]}
+      {...otherProps}>
       {children}
     </RNText>
   );

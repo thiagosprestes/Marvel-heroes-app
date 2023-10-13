@@ -11,11 +11,19 @@ const styles = StyleSheet.create({
   },
   smallTitle: {
     fontSize: 20,
-    fontFamily: 'Gilroy-Medium',
+    fontFamily: 'Gilroy-Bold',
+  },
+  large: {
+    fontSize: 18,
+    fontFamily: 'Gilroy-bold',
   },
   normal: {
     fontSize: 14,
     fontFamily: 'Gilroy-Medium',
+  },
+  small: {
+    fontSize: 10,
+    fontFamily: 'Gilroy-Regular',
   },
 });
 
